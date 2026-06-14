@@ -52,6 +52,7 @@ function filterVIP(members) {
 function sumCredits(members) {
   // TODO: 實作此函式
   // 提示：用 reduce，初始值給 0
+  return members.reduce((acc, curVal) => acc + curVal.credits, 0);
 }
 
 // ========== 任務四：讀取環境變數 ==========
