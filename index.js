@@ -35,6 +35,7 @@ async function readMembers(filePath) {
 function filterVIP(members) {
   // TODO: 實作此函式
   // 提示：用 Array.prototype.filter，不要修改原陣列
+  return members.filter((member) => member.level === 'VIP');
 }
 
 // ========== 任務三：計算會員剩餘點數總和 ==========
