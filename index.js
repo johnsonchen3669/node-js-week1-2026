@@ -103,6 +103,17 @@ async function getVIPSummary(filePath) {
   //   2. 篩出 VIP
   //   3. 算總點數、收集姓名
   //   4. 回傳 { count, totalCredits, names }
+
+  // 讀會員資料
+  const members = await readMembers(filePath);
+  // 篩出 VIP
+  const vipMembers = filterVIP(members);
+  // 算總點數、收集姓名
+  const count = vipMembers.length;
+  const totalCredits = await sumCredits(vipMembers);
+  const names = vipMembers.map((member) => member.name);
+
+  return { count, totalCredits, names };
 }
 
 module.exports = {
