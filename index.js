@@ -75,6 +75,12 @@ function sumCredits(members) {
 function getGymConfig() {
   // TODO: 實作此函式
   // 提示：用 || 給預設值
+  const { GYM_NAME, ADMIN_NAME, DEFAULT_MEMBERS_PATH } = process.env;
+  return {
+    gymName: GYM_NAME || '未命名健身房',
+    adminName: ADMIN_NAME || '尚未指派',
+    defaultMembersPath: DEFAULT_MEMBERS_PATH,
+  };
 }
 
 // ========== 任務五：VIP 會員統計摘要（綜合題）==========
