@@ -110,7 +110,7 @@ async function getVIPSummary(filePath) {
   const vipMembers = filterVIP(members);
   // 算總點數、收集姓名
   const count = vipMembers.length;
-  const totalCredits = await sumCredits(vipMembers);
+  const totalCredits = sumCredits(vipMembers);
   const names = vipMembers.map((member) => member.name);
 
   return { count, totalCredits, names };
